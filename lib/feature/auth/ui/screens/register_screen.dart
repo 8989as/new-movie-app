@@ -26,29 +26,29 @@ class RegisterScreen extends StatelessWidget {
                 onTapOutside: (event) {
                   FocusManager.instance.primaryFocus!.unfocus();
                 },
-                style: TextStyle(
+                style: const TextStyle(
                     color: ColorsManager.white, fontWeight: FontWeight.w400),
                 decoration: InputDecoration(
                     filled: true,
                     fillColor: ColorsManager.mutedBlack,
                     hintText: "Name",
-                    hintStyle: TextStyle(
+                    hintStyle: const TextStyle(
                         color: ColorsManager.white,
                         fontSize: 16,
                         fontWeight: FontWeight.w400),
                     enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: ColorsManager.mutedBlack),
+                        borderSide: const BorderSide(color: ColorsManager.mutedBlack),
                         borderRadius: BorderRadius.circular(15)),
                     border: OutlineInputBorder(
-                        borderSide: BorderSide(color: ColorsManager.mutedBlack),
+                        borderSide: const BorderSide(color: ColorsManager.mutedBlack),
                         borderRadius: BorderRadius.circular(15)),
                     focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: ColorsManager.mutedBlack),
+                        borderSide: const BorderSide(color: ColorsManager.mutedBlack),
                         borderRadius: BorderRadius.circular(15)),
                     disabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: ColorsManager.mutedBlack),
+                        borderSide: const BorderSide(color: ColorsManager.mutedBlack),
                         borderRadius: BorderRadius.circular(15)),
-                    prefixIcon: ImageIcon(
+                    prefixIcon: const ImageIcon(
                       AssetImage(AssetsManager.name),
                       color: ColorsManager.white,
                     )),
@@ -61,29 +61,29 @@ class RegisterScreen extends StatelessWidget {
                 onTapOutside: (event) {
                   FocusManager.instance.primaryFocus!.unfocus();
                 },
-                style: TextStyle(
+                style: const TextStyle(
                     color: ColorsManager.white, fontWeight: FontWeight.w400),
                 decoration: InputDecoration(
                     filled: true,
                     fillColor: ColorsManager.mutedBlack,
                     hintText: "Email",
-                    hintStyle: TextStyle(
+                    hintStyle: const TextStyle(
                         color: ColorsManager.white,
                         fontSize: 16,
                         fontWeight: FontWeight.w400),
                     enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: ColorsManager.mutedBlack),
+                        borderSide: const BorderSide(color: ColorsManager.mutedBlack),
                         borderRadius: BorderRadius.circular(15)),
                     border: OutlineInputBorder(
-                        borderSide: BorderSide(color: ColorsManager.mutedBlack),
+                        borderSide: const BorderSide(color: ColorsManager.mutedBlack),
                         borderRadius: BorderRadius.circular(15)),
                     focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: ColorsManager.gold),
+                        borderSide: const BorderSide(color: ColorsManager.gold),
                         borderRadius: BorderRadius.circular(15)),
                     disabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: ColorsManager.mutedBlack),
+                        borderSide: const BorderSide(color: ColorsManager.mutedBlack),
                         borderRadius: BorderRadius.circular(15)),
-                    prefixIcon: ImageIcon(
+                    prefixIcon: const ImageIcon(
                       AssetImage(AssetsManager.email),
                       color: ColorsManager.white,
                     )),
@@ -96,29 +96,29 @@ class RegisterScreen extends StatelessWidget {
                 onTapOutside: (event) {
                   FocusManager.instance.primaryFocus!.unfocus();
                 },
-                style: TextStyle(
+                style: const TextStyle(
                     color: ColorsManager.white, fontWeight: FontWeight.w400),
                 decoration: InputDecoration(
                     filled: true,
                     fillColor: ColorsManager.mutedBlack,
                     hintText: "Password",
-                    hintStyle: TextStyle(
+                    hintStyle: const TextStyle(
                         color: ColorsManager.white,
                         fontSize: 16,
                         fontWeight: FontWeight.w400),
                     enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: ColorsManager.mutedBlack),
+                        borderSide: const BorderSide(color: ColorsManager.mutedBlack),
                         borderRadius: BorderRadius.circular(15)),
                     border: OutlineInputBorder(
-                        borderSide: BorderSide(color: ColorsManager.mutedBlack),
+                        borderSide: const BorderSide(color: ColorsManager.mutedBlack),
                         borderRadius: BorderRadius.circular(15)),
                     focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: ColorsManager.gold),
+                        borderSide: const BorderSide(color: ColorsManager.gold),
                         borderRadius: BorderRadius.circular(15)),
                     disabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: ColorsManager.mutedBlack),
+                        borderSide: const BorderSide(color: ColorsManager.mutedBlack),
                         borderRadius: BorderRadius.circular(15)),
-                    prefixIcon: ImageIcon(
+                    prefixIcon: const ImageIcon(
                       AssetImage(AssetsManager.lock),
                       color: ColorsManager.white,
                     )),
@@ -131,29 +131,29 @@ class RegisterScreen extends StatelessWidget {
                 onTapOutside: (event) {
                   FocusManager.instance.primaryFocus!.unfocus();
                 },
-                style: TextStyle(
+                style: const TextStyle(
                     color: ColorsManager.white, fontWeight: FontWeight.w400),
                 decoration: InputDecoration(
                     filled: true,
                     fillColor: ColorsManager.mutedBlack,
                     hintText: "Re-Password",
-                    hintStyle: TextStyle(
+                    hintStyle: const TextStyle(
                         color: ColorsManager.white,
                         fontSize: 16,
                         fontWeight: FontWeight.w400),
                     enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: ColorsManager.mutedBlack),
+                        borderSide: const BorderSide(color: ColorsManager.mutedBlack),
                         borderRadius: BorderRadius.circular(15)),
                     border: OutlineInputBorder(
-                        borderSide: BorderSide(color: ColorsManager.mutedBlack),
+                        borderSide: const BorderSide(color: ColorsManager.mutedBlack),
                         borderRadius: BorderRadius.circular(15)),
                     focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: ColorsManager.gold),
+                        borderSide: const BorderSide(color: ColorsManager.gold),
                         borderRadius: BorderRadius.circular(15)),
                     disabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: ColorsManager.mutedBlack),
+                        borderSide: const BorderSide(color: ColorsManager.mutedBlack),
                         borderRadius: BorderRadius.circular(15)),
-                    prefixIcon: ImageIcon(
+                    prefixIcon: const ImageIcon(
                       AssetImage("assets/icons/lock.png"),
                       color: ColorsManager.white,
                     )),
@@ -166,29 +166,29 @@ class RegisterScreen extends StatelessWidget {
                 onTapOutside: (event) {
                   FocusManager.instance.primaryFocus!.unfocus();
                 },
-                style: TextStyle(
+                style: const TextStyle(
                     color: ColorsManager.white, fontWeight: FontWeight.w400),
                 decoration: InputDecoration(
                     filled: true,
                     fillColor: ColorsManager.mutedBlack,
                     hintText: "Phone Number",
-                    hintStyle: TextStyle(
+                    hintStyle: const TextStyle(
                         color: ColorsManager.white,
                         fontSize: 16,
                         fontWeight: FontWeight.w400),
                     enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: ColorsManager.mutedBlack),
+                        borderSide: const BorderSide(color: ColorsManager.mutedBlack),
                         borderRadius: BorderRadius.circular(15)),
                     border: OutlineInputBorder(
-                        borderSide: BorderSide(color: ColorsManager.mutedBlack),
+                        borderSide: const BorderSide(color: ColorsManager.mutedBlack),
                         borderRadius: BorderRadius.circular(15)),
                     focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: ColorsManager.gold),
+                        borderSide: const BorderSide(color: ColorsManager.gold),
                         borderRadius: BorderRadius.circular(15)),
                     disabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: ColorsManager.mutedBlack),
+                        borderSide: const BorderSide(color: ColorsManager.mutedBlack),
                         borderRadius: BorderRadius.circular(15)),
-                    prefixIcon: ImageIcon(
+                    prefixIcon: const ImageIcon(
                       AssetImage("assets/icons/phone.png"),
                       color: ColorsManager.white,
                     )),
@@ -240,7 +240,7 @@ class RegisterScreen extends StatelessWidget {
             Center(
               child: AnimatedToggleSwitch<String>.rolling(
                 height: 36,
-                indicatorSize: Size(42, 36),
+                indicatorSize: const Size(42, 36),
                 clipBehavior: Clip.hardEdge,
                 style: ToggleStyle(
                   backgroundColor:

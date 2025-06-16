@@ -15,7 +15,7 @@ class ForgotPasswordScreen extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: ColorsManager.black,
-        title: Text(
+        title: const Text(
           "Forget Password",
           style: TextStyle(color: ColorsManager.gold),
         ),
@@ -23,7 +23,7 @@ class ForgotPasswordScreen extends StatelessWidget {
             onPressed: () {
               Navigator.pushReplacementNamed(context, AppRoutesName.login);
             },
-            icon: Icon(Icons.arrow_back, size: 25, color: ColorsManager.gold)),
+            icon: const Icon(Icons.arrow_back, size: 25, color: ColorsManager.gold)),
       ),
       body: SafeArea(
         child: Padding(
@@ -32,7 +32,7 @@ class ForgotPasswordScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Image.asset(AssetsManager.reset),
-                Spacer(
+                const Spacer(
                   flex: 1,
                 ),
                 //first text field
@@ -42,33 +42,33 @@ class ForgotPasswordScreen extends StatelessWidget {
                     onTapOutside: (event) {
                       FocusManager.instance.primaryFocus!.unfocus();
                     },
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: ColorsManager.white,
                         fontWeight: FontWeight.w400),
                     decoration: InputDecoration(
                         filled: true,
                         fillColor: ColorsManager.mutedBlack,
                         hintText: "Email",
-                        hintStyle: TextStyle(
+                        hintStyle: const TextStyle(
                             color: ColorsManager.white,
                             fontSize: 16,
                             fontWeight: FontWeight.w400),
                         enabledBorder: OutlineInputBorder(
                             borderSide:
-                                BorderSide(color: ColorsManager.mutedBlack),
+                                const BorderSide(color: ColorsManager.mutedBlack),
                             borderRadius: BorderRadius.circular(15)),
                         border: OutlineInputBorder(
                             borderSide:
-                                BorderSide(color: ColorsManager.mutedBlack),
+                                const BorderSide(color: ColorsManager.mutedBlack),
                             borderRadius: BorderRadius.circular(15)),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: ColorsManager.gold),
+                            borderSide: const BorderSide(color: ColorsManager.gold),
                             borderRadius: BorderRadius.circular(15)),
                         disabledBorder: OutlineInputBorder(
                             borderSide:
-                                BorderSide(color: ColorsManager.mutedBlack),
+                                const BorderSide(color: ColorsManager.mutedBlack),
                             borderRadius: BorderRadius.circular(15)),
-                        prefixIcon: ImageIcon(
+                        prefixIcon: const ImageIcon(
                           AssetImage("assets/icons/email.png"),
                           color: ColorsManager.white,
                         )),
@@ -81,7 +81,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                       onPressed: () {},
                       text: "Reset Password"),
                 ),
-                Spacer(
+                const Spacer(
                   flex: 4,
                 ),
               ],

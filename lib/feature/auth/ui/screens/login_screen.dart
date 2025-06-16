@@ -19,7 +19,7 @@ class Login extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              Spacer(),
+              const Spacer(),
               Center(child: Image.asset(AssetsManager.logo)),
               SizedBox(height: MediaQuery.of(context).size.height * 0.01),
               //first text field
@@ -29,32 +29,32 @@ class Login extends StatelessWidget {
                   onTapOutside: (event) {
                     FocusManager.instance.primaryFocus!.unfocus();
                   },
-                  style: TextStyle(
+                  style: const TextStyle(
                       color: ColorsManager.white, fontWeight: FontWeight.w400),
                   decoration: InputDecoration(
                       filled: true,
                       fillColor: ColorsManager.mutedBlack,
                       hintText: "Email",
-                      hintStyle: TextStyle(
+                      hintStyle: const TextStyle(
                           color: ColorsManager.white,
                           fontSize: 16,
                           fontWeight: FontWeight.w400),
                       enabledBorder: OutlineInputBorder(
                           borderSide:
-                              BorderSide(color: ColorsManager.mutedBlack),
+                              const BorderSide(color: ColorsManager.mutedBlack),
                           borderRadius: BorderRadius.circular(15)),
                       border: OutlineInputBorder(
                           borderSide:
-                              BorderSide(color: ColorsManager.mutedBlack),
+                              const BorderSide(color: ColorsManager.mutedBlack),
                           borderRadius: BorderRadius.circular(15)),
                       focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: ColorsManager.gold),
+                          borderSide: const BorderSide(color: ColorsManager.gold),
                           borderRadius: BorderRadius.circular(15)),
                       disabledBorder: OutlineInputBorder(
                           borderSide:
-                              BorderSide(color: ColorsManager.mutedBlack),
+                              const BorderSide(color: ColorsManager.mutedBlack),
                           borderRadius: BorderRadius.circular(15)),
-                      prefixIcon: ImageIcon(
+                      prefixIcon: const ImageIcon(
                         AssetImage(AssetsManager.email),
                         color: ColorsManager.white,
                       )),
@@ -67,32 +67,32 @@ class Login extends StatelessWidget {
                   onTapOutside: (event) {
                     FocusManager.instance.primaryFocus!.unfocus();
                   },
-                  style: TextStyle(
+                  style: const TextStyle(
                       color: ColorsManager.white, fontWeight: FontWeight.w400),
                   decoration: InputDecoration(
                       filled: true,
                       fillColor: ColorsManager.mutedBlack,
                       hintText: "Password",
-                      hintStyle: TextStyle(
+                      hintStyle: const TextStyle(
                           color: ColorsManager.white,
                           fontSize: 16,
                           fontWeight: FontWeight.w400),
                       enabledBorder: OutlineInputBorder(
                           borderSide:
-                              BorderSide(color: ColorsManager.mutedBlack),
+                              const BorderSide(color: ColorsManager.mutedBlack),
                           borderRadius: BorderRadius.circular(15)),
                       border: OutlineInputBorder(
                           borderSide:
-                              BorderSide(color: ColorsManager.mutedBlack),
+                              const BorderSide(color: ColorsManager.mutedBlack),
                           borderRadius: BorderRadius.circular(15)),
                       focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: ColorsManager.gold),
+                          borderSide: const BorderSide(color: ColorsManager.gold),
                           borderRadius: BorderRadius.circular(15)),
                       disabledBorder: OutlineInputBorder(
                           borderSide:
-                              BorderSide(color: ColorsManager.mutedBlack),
+                              const BorderSide(color: ColorsManager.mutedBlack),
                           borderRadius: BorderRadius.circular(15)),
-                      prefixIcon: ImageIcon(
+                      prefixIcon: const ImageIcon(
                         AssetImage(AssetsManager.lock),
                         color: ColorsManager.white,
                       )),
@@ -238,7 +238,7 @@ class Login extends StatelessWidget {
               Center(
                 child: AnimatedToggleSwitch<String>.rolling(
                   height: 36,
-                  indicatorSize: Size(42, 36),
+                  indicatorSize: const Size(42, 36),
                   style: ToggleStyle(
                     backgroundColor:
                         Colors.transparent, // Background when not selected
@@ -254,7 +254,7 @@ class Login extends StatelessWidget {
                   ],
                 ),
               ),
-              Spacer(
+              const Spacer(
                 flex: 3,
               ),
             ],
