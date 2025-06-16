@@ -16,4 +16,13 @@ class AssetsManager {
   static const String onBoarding4 = 'assets/images/image4.png';
   static const String onBoarding5 = 'assets/images/image5.png';
   static const String backGround = 'assets/images/background.png';
+  static const String ar = 'assets/icons/ar.png';
+  static const String en = 'assets/icons/en.png';
+  static const String eye = 'assets/icons/eye.png';
+  static const String lock = 'assets/icons/lock.png';
+  static const String email = 'assets/icons/email.png';
+  static const String phone = 'assets/icons/phone.png';
+  static const String google = 'assets/icons/google.png';
+  static const String name = 'assets/icons/name.png';
+  static const String reset = 'assets/images/forget_password.png';
 }
