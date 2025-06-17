@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:new_movie_app/core/theming/colors_manager.dart';
 
 class CustomBtn extends StatelessWidget {
-  CustomBtn({super.key, required this.text, required this.onTap});
-  String text;
-  void Function() onTap;
+  const CustomBtn({super.key, required this.text, required this.onTap});
+  final String text;
+  final void Function() onTap;
 
   @override
   Widget build(BuildContext context) {
