@@ -6,7 +6,7 @@ import 'package:new_movie_app/core/theming/colors_manager.dart';
 import 'package:new_movie_app/core/utils/locale_keys.dart';
 import 'package:new_movie_app/feature/explore/ui/screens/explore_screen.dart';
 import 'package:new_movie_app/feature/home/ui/screens/home_screen.dart';
-import 'package:new_movie_app/feature/profile/ui/screens/profile_screen.dart';
+import 'package:new_movie_app/feature/profile/ui/screens/profile_main.dart';
 import 'package:new_movie_app/feature/search/ui/screens/search_screen_with_results.dart';
 
 class UserHomeView extends StatefulWidget {
@@ -23,7 +23,7 @@ class _UserHomeViewState extends State<UserHomeView> {
     const HomeScreen(),
     const SearchScreenWithResults(),
     const ExploreScreen(),
-    const ProfileScreen()
+    const ProfileMain()
   ];
   @override
   void initState() {
