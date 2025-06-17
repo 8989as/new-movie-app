@@ -16,8 +16,6 @@ void main() {
       fallbackLocale: AppLocalizations.englishLocale,
       startLocale: AppLocalizations.arabicLocale,
       path: AppConstant.translationsPath,
-
-      // child: const DealApp(),
       child: DevicePreview(
         enabled: kDebugMode,
         builder: (context) => const MovieApp(),
