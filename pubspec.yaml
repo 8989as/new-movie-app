@@ -28,17 +28,18 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  animate_do:
-  carousel_slider:
-  cupertino_icons:
-  device_preview:
-  easy_localization:
-  google_fonts:
-  animated_toggle_switch:
+  animate_do: null
+  animated_toggle_switch: null
+  carousel_slider: null
+  cupertino_icons: null
+  device_preview: null
+  easy_localization: null
   flutter:
     sdk: flutter
-  flutter_svg:
-  shared_preferences:
+  flutter_native_splash: ^2.4.6
+  flutter_svg: null
+  google_fonts: null
+  shared_preferences: null
 
 dev_dependencies:
   flutter_lints: ^4.0.0
