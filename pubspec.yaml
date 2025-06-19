@@ -39,6 +39,11 @@ dependencies:
     sdk: flutter
   flutter_svg:
   shared_preferences:
+  bloc:
+  dio:
+  equatable: ^2.0.5
+  flutter_bloc: ^8.1.5
+  another_flushbar: ^1.12.30
 
 dev_dependencies:
   flutter_lints: ^4.0.0

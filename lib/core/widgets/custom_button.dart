@@ -17,6 +17,7 @@ class CustomButton extends StatelessWidget {
     return CupertinoButton(
       color: ColorsManager.gold,
       disabledColor: ColorsManager.mutedBlack.withOpacity(0.5),
+      onPressed: isloading ? null : onPressed,
       child: AnimatedCrossFade(
           firstChild: SizedBox(
             width: double.infinity,
@@ -29,11 +30,10 @@ class CustomButton extends StatelessWidget {
                       fontSize: 20)),
             ),
           ),
-          secondChild: CupertinoActivityIndicator(color: ColorsManager.gold),
+          secondChild: const CupertinoActivityIndicator(color: ColorsManager.gold),
           crossFadeState:
               isloading ? CrossFadeState.showSecond : CrossFadeState.showFirst,
-          duration: Duration(milliseconds: 500)),
-      onPressed: isloading ? null : onPressed,
+          duration: const Duration(milliseconds: 500)),
     );
   }
 }
