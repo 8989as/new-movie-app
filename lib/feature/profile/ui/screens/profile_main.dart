@@ -1,26 +1,17 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
-import 'package:movies/core/theming/colors_manager.dart';
-import 'package:movies/feature/profile/ui/widgets/avatar_widget.dart';
-import '../widgets/history_widget.dart';
-import '../widgets/watch_list_widget.dart';
-import 'edit_profile_screen.dart';
+import 'profile_widgets/history_widget.dart';
+import 'profile_widgets/update_profile_widget.dart';
+import 'profile_widgets/watch_list_widget.dart';
 
-class ProfileMainScreen extends StatefulWidget {
-  const ProfileMainScreen({super.key});
+class ProfileMain extends StatefulWidget {
+  const ProfileMain({super.key});
 
   @override
-  State<ProfileMainScreen> createState() => _ProfileMainScreenState();
+  State<ProfileMain> createState() => _ProfileMainState();
 }
 
-class _ProfileMainScreenState extends State<ProfileMainScreen> {
+class _ProfileMainState extends State<ProfileMain> {
   int _selectedTab = 0;
-  final String _avatarUrl =
-      'assets/images/avatars/avatar1.png'; // Default avatar
-  final String _username = 'John Doe';
-  final int _watchlistCount = 24;
-  final int _historyCount = 15;
 
   void _onTabSelected(int index) {
     setState(() {
@@ -31,12 +22,12 @@ class _ProfileMainScreenState extends State<ProfileMainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorManager.backgroundDark,
+      backgroundColor: const Color(0xFF121312),
       body: SafeArea(
         child: Column(
           children: [
             Container(
-              color: ColorManager.surfaceDark,
+              color: const Color(0xFF202020),
               padding: const EdgeInsets.fromLTRB(16, 24, 16, 16),
               child: Column(
                 children: [
@@ -52,44 +43,44 @@ class _ProfileMainScreenState extends State<ProfileMainScreen> {
                             flex: 2,
                             child: Column(
                               children: [
-                                AvatarWidget(
-                                  avatarUrl: _avatarUrl,
-                                  size: 118,
-                                  onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) =>
-                                            const EditProfileScreen(),
-                                      ),
-                                    );
-                                  },
-                                ),
-                                const SizedBox(height: 8),
-                                Text(
-                                  _username,
-                                  style: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
+                                Container(
+                                  width: 118,
+                                  height: 118,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                        width: 1, color: Colors.white),
                                   ),
-                                  textAlign: TextAlign.center,
+                                  clipBehavior: Clip.antiAlias,
+                                  child: Image.asset(
+                                    'assets/images/pp.png',
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                                const SizedBox(height: 15),
+                                const Text(
+                                  'John Safwat',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontFamily: 'Roboto',
+                                    fontWeight: FontWeight.w700,
+                                  ),
                                 ),
                               ],
                             ),
                           ),
-                          // Stats column
+                          // Stats column (Wish List and History)
                           Expanded(
                             flex: 3,
                             child: Padding(
                               padding: const EdgeInsets.only(top: 16.0),
                               child: Row(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
+                                    MainAxisAlignment.spaceAround,
                                 children: [
-                                  _buildStatColumn(
-                                      'Watchlist', _watchlistCount),
-                                  _buildStatColumn('History', _historyCount),
+                                  _buildStatColumn('12', 'Wish List'),
+                                  _buildStatColumn('10', 'History'),
                                 ],
                               ),
                             ),
@@ -98,23 +89,113 @@ class _ProfileMainScreenState extends State<ProfileMainScreen> {
                       );
                     },
                   ),
-                  const SizedBox(height: 20),
-                  // Tabs row
+                  const SizedBox(height: 24),
+
+                  // Buttons Row
                   Row(
                     children: [
-                      _buildTabButton('Watchlist', 0),
-                      const SizedBox(width: 16),
-                      _buildTabButton('History', 1),
+                      // Edit Profile Button
+                      Expanded(
+                        child: Container(
+                          height: 56,
+                          margin: const EdgeInsets.only(right: 10),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const UpdateProfileWidget(),
+                                ),
+                              );
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: const Color(0xFFF6BD00),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 35),
+                            ),
+                            child: const Text(
+                              'Edit Profile',
+                              style: TextStyle(
+                                color: Color(0xFF121312),
+                                fontSize: 20,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      // Exit Button
+                      SizedBox(
+                        width: 135,
+                        height: 56,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xFFE82626),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                          ),
+                          // ignore: prefer_const_constructors
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const [
+                              Text(
+                                'Exit',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                              SizedBox(width: 8),
+                              Icon(Icons.logout, size: 20),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 24),
+
+                  // Tab Bar
+                  Row(
+                    children: [
+                      Expanded(
+                        child: _buildTab(
+                          'Watch List',
+                          Icons.format_list_bulleted,
+                          0,
+                        ),
+                      ),
+                      Expanded(
+                        child: _buildTab(
+                          'History',
+                          Icons.folder_outlined,
+                          1,
+                        ),
+                      ),
                     ],
                   ),
                 ],
               ),
             ),
-            // Tab content area
+
+            // Content Area
             Expanded(
-              child: _selectedTab == 0
-                  ? const WatchListWidget()
-                  : const HistoryWidget(),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Column(
+                  children: [
+                    const SizedBox(height: 24),
+                    Expanded(child: _buildTabContent()),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
@@ -122,56 +203,81 @@ class _ProfileMainScreenState extends State<ProfileMainScreen> {
     );
   }
 
-  Widget _buildStatColumn(String label, int count) {
-    return Column(
-      children: [
-        Text(
-          count.toString(),
-          style: TextStyle(
-            color: ColorManager.accent,
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
+  Widget _buildTab(String label, IconData icon, int index) {
+    final isSelected = _selectedTab == index;
+    return InkWell(
+      onTap: () => _onTabSelected(index),
+      child: Container(
+        padding: const EdgeInsets.only(bottom: 16),
+        decoration: BoxDecoration(
+          border: Border(
+            bottom: BorderSide(
+              width: 3,
+              color: isSelected ? const Color(0xFFF6BD00) : Colors.transparent,
+            ),
           ),
         ),
-        const SizedBox(height: 4),
+        child: Column(
+          children: [
+            Icon(
+              icon,
+              color: Colors.white,
+              size: 24,
+            ),
+            const SizedBox(height: 8),
+            Text(
+              label,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+                fontFamily: 'Roboto',
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTabContent() {
+    switch (_selectedTab) {
+      case 0:
+        return const WatchListWidget();
+      case 1:
+        return const HistoryWidget();
+      default:
+        return const SizedBox.shrink();
+    }
+  }
+
+  Widget _buildStatColumn(String count, String label) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          count,
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 28,
+            fontFamily: 'Roboto',
+            fontWeight: FontWeight.w900,
+          ),
+        ),
+        const SizedBox(height: 8),
         Text(
           label,
           style: const TextStyle(
             color: Colors.white,
-            fontSize: 16,
+            fontSize: 22,
+            fontFamily: 'Roboto',
+            fontWeight: FontWeight.w800,
+            height: 1, // Reduce line height
           ),
+          softWrap: false, // Prevent text wrapping
+          overflow: TextOverflow.visible, // Allow text to overflow if needed
         ),
       ],
-    );
-  }
-
-  Widget _buildTabButton(String label, int tabIndex) {
-    final isSelected = _selectedTab == tabIndex;
-
-    return Expanded(
-      child: GestureDetector(
-        onTap: () => _onTabSelected(tabIndex),
-        child: Container(
-          padding: const EdgeInsets.symmetric(vertical: 12),
-          decoration: BoxDecoration(
-            border: Border(
-              bottom: BorderSide(
-                color: isSelected ? ColorManager.accent : Colors.transparent,
-                width: 2,
-              ),
-            ),
-          ),
-          child: Text(
-            label,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: isSelected ? ColorManager.accent : Colors.white,
-              fontSize: 16,
-              fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-            ),
-          ),
-        ),
-      ),
     );
   }
 }

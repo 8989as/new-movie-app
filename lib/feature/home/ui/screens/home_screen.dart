@@ -1,181 +1,101 @@
-import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:movies/core/theming/colors_manager.dart';
-import 'package:movies/core/theming/styles_manager.dart';
-import 'package:movies/core/theming/values_manager.dart';
-import 'package:movies/core/theming/font_manager.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter/material.dart';
+import 'package:new_movie_app/core/helpers/app_image_assets.dart';
+import 'package:new_movie_app/core/theming/colors_manager.dart';
+import 'package:new_movie_app/core/theming/text_styles.dart';
+import 'package:new_movie_app/core/utils/locale_keys.dart';
+import 'package:new_movie_app/feature/home/ui/widgets/carousel_slider_body.dart';
+import 'package:new_movie_app/feature/home/ui/widgets/list_view_body.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
-
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  int _currentIndex = 0;
-
-  // Placeholder pages for bottom nav
-  final List<Widget> _pages = [
-    const _HomePlaceholder(),
-    const _MoviesPlaceholder(),
-    const _ProfilePlaceholder(),
-  ];
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: _pages[_currentIndex],
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.1),
-              blurRadius: 10,
-              offset: const Offset(0, -5),
-            ),
-          ],
+    return Column(
+      children: [
+        SizedBox(
+          height: MediaQuery.of(context).size.height * 0.65,
+          width: double.infinity,
+          child: Stack(
+            fit: StackFit.expand,
+            children: [
+              Image.asset(
+                'assets/images/62a91993882ebf7b39030a68c87492f1e5e33643.jpg',
+                fit: BoxFit.cover,
+              ),
+              Container(
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Color.fromRGBO(0, 0, 0, 0.8),
+                      Color.fromRGBO(0, 0, 0, 0.6),
+                    ],
+                  ),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      AssetsManager.availableNow,
+                      width: MediaQuery.of(context).size.width * 0.5,
+                      height: MediaQuery.of(context).size.height * 0.1,
+                    ),
+                    const Spacer(),
+                    const CarouselSliderBody(),
+                    const Spacer(),
+                    Image.asset(
+                      AssetsManager.watchNow,
+                      width: MediaQuery.of(context).size.width * 0.75,
+                      height: MediaQuery.of(context).size.height * 0.1395,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
-        child: BottomNavigationBar(
-          currentIndex: _currentIndex,
-          onTap: (index) {
-            setState(() {
-              _currentIndex = index;
-            });
-          },
-          selectedItemColor: ColorManager.primary,
-          unselectedItemColor: ColorManager.textSecondary,
-          showUnselectedLabels: true,
-          type: BottomNavigationBarType.fixed,
-          items: [
-            BottomNavigationBarItem(
-              icon: const Icon(Icons.home_outlined),
-              activeIcon: const Icon(Icons.home),
-              label: 'home.title'.tr(),
-            ),
-            BottomNavigationBarItem(
-              icon: const Icon(Icons.movie_outlined),
-              activeIcon: const Icon(Icons.movie),
-              label: 'movies.title'.tr(),
-            ),
-            BottomNavigationBarItem(
-              icon: const Icon(Icons.person_outline),
-              activeIcon: const Icon(Icons.person),
-              label: 'profile.title'.tr(),
-            ),
-          ],
+        Padding(
+          padding: const EdgeInsets.only(
+            right: 16,
+            left: 16,
+          ),
+          child: Row(
+            children: [
+              Text(
+                LocaleKeys.action.tr(),
+                style: TextStyles.font18WhiteRegular,
+              ),
+              const Spacer(),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: ColorsManager.black,
+                ),
+                child: Row(
+                  children: [
+                    Text(
+                      LocaleKeys.seeMore.tr(),
+                      style: TextStyles.font18WhiteRegular.copyWith(
+                        color: ColorsManager.gold,
+                      ),
+                    ),
+                    const SizedBox(width: 5),
+                    const Icon(
+                      Icons.arrow_forward,
+                      color: ColorsManager.gold,
+                      size: 16,
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
-      ),
-    );
-  }
-}
-
-// Placeholder Widgets
-class _HomePlaceholder extends StatelessWidget {
-  const _HomePlaceholder();
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            Icons.home,
-            size: 80.r,
-            color: ColorManager.primary,
-          ),
-          SizedBox(height: AppSize.s20.h),
-          Text(
-            'Home Feature',
-            style: getBoldStyle(
-              color: ColorManager.textPrimary,
-              fontSize: FontSize.s24.sp,
-            ),
-          ),
-          SizedBox(height: AppSize.s8.h),
-          Text(
-            'Coming Soon',
-            style: getMediumStyle(
-              color: ColorManager.textSecondary,
-              fontSize: FontSize.s16.sp,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _MoviesPlaceholder extends StatelessWidget {
-  const _MoviesPlaceholder();
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            Icons.movie,
-            size: 80.r,
-            color: ColorManager.primary,
-          ),
-          SizedBox(height: AppSize.s20.h),
-          Text(
-            'Movies Feature',
-            style: getBoldStyle(
-              color: ColorManager.textPrimary,
-              fontSize: FontSize.s24.sp,
-            ),
-          ),
-          SizedBox(height: AppSize.s8.h),
-          Text(
-            'Coming Soon',
-            style: getMediumStyle(
-              color: ColorManager.textSecondary,
-              fontSize: FontSize.s16.sp,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _ProfilePlaceholder extends StatelessWidget {
-  const _ProfilePlaceholder();
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            Icons.person,
-            size: 80.r,
-            color: ColorManager.primary,
-          ),
-          SizedBox(height: AppSize.s20.h),
-          Text(
-            'Profile Feature',
-            style: getBoldStyle(
-              color: ColorManager.textPrimary,
-              fontSize: FontSize.s24.sp,
-            ),
-          ),
-          SizedBox(height: AppSize.s8.h),
-          Text(
-            'Coming Soon',
-            style: getMediumStyle(
-              color: ColorManager.textSecondary,
-              fontSize: FontSize.s16.sp,
-            ),
-          ),
-        ],
-      ),
+        const ListViewBody(),
+      ],
     );
   }
 }
