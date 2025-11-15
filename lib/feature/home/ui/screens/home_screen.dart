@@ -5,7 +5,6 @@ import 'package:new_movie_app/core/theming/colors_manager.dart';
 import 'package:new_movie_app/core/theming/text_styles.dart';
 import 'package:new_movie_app/core/utils/locale_keys.dart';
 import 'package:new_movie_app/feature/home/ui/widgets/carousel_slider_body.dart';
-import 'package:new_movie_app/feature/home/ui/widgets/list_view_body.dart';
 
 import '../../../../core/routes/app_routes_name.dart';
 import '../../data/movie_serviece.dart';
