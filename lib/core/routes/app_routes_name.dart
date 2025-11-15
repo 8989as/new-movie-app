@@ -6,4 +6,6 @@ class AppRoutesName {
   static const String reset = "/reset";
   static const String signUp = "/signUp";
   static const String userHomeView = "/userHomeView";
+  static const String action = "/action";
+  static const String details = "/movie-details";
 }

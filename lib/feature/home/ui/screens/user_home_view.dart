@@ -22,7 +22,7 @@ class _UserHomeViewState extends State<UserHomeView> {
   final List<Widget> _screens = [
     const HomeScreen(),
     const SearchScreenWithResults(),
-    const ExploreScreen(),
+     ExploreScreen(),
     const ProfileMain()
   ];
   @override

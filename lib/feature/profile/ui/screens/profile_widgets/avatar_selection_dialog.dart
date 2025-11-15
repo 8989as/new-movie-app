@@ -4,9 +4,9 @@ class AvatarSelectionDialog extends StatelessWidget {
   final Function(String) onAvatarSelected;
 
   const AvatarSelectionDialog({
-    Key? key,
+    super.key,
     required this.onAvatarSelected,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

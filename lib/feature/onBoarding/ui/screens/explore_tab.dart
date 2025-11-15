@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:new_movie_app/core/helpers/app_image_assets.dart';
 import 'package:new_movie_app/core/theming/colors_manager.dart';
